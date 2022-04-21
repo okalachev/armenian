@@ -203,8 +203,20 @@ function nextQuestion() {
 	question++;
 }
 
+function proceed() {
+	if (question == questions.length) {
+		finishTest();
+	} else {
+		nextQuestion();
+	}
+}
+
+let nextQuestionTimeout;
+
 function input(e) {
 	if (document.querySelector('.choice.correct')) return; // already answered
+
+	e.stopPropagation();
 
 	let answer = e.currentTarget.getAttribute('data-answer');
 
@@ -217,13 +229,14 @@ function input(e) {
 		document.querySelector(`.choice[data-answer="${correct}"]`).classList.add('correct');
 	}
 
-	setTimeout(function() {
-		if (question == questions.length) { 
-			finishTest();
-		} else {
-			nextQuestion();
-		}
-	}, answer == correct ? 200 : 2000);
+	nextQuestionTimeout = setTimeout(proceed, answer == correct ? 200 : 2000);
+}
+
+function skip() {
+	if (document.querySelector('.choice.correct')) {
+		clearTimeout(nextQuestionTimeout);
+		proceed();
+	}
 }
 
 fetch('armenian.csv')
