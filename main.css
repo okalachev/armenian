@@ -1,0 +1,212 @@
+body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+}
+
+h1 {
+	text-align: center;
+	font-weight: normal;
+	margin: 20px;
+}
+
+form {
+	margin: 20px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px 20px;
+}
+
+form .group {
+	display: inline-block;
+}
+
+button {
+	font-size: 20px;
+	background: #4761c7;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+#none-btn {
+	font-size: 16px;
+	vertical-align: baseline;
+	padding: 0;
+	background: none;
+	color:rgb(71, 97, 199);
+	cursor: pointer;
+	user-select: none;
+}
+
+label {
+	user-select: none;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(71, 97, 199);
+}
+
+.alphabet {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 0 20px;
+	margin: 20px auto;
+}
+
+.letter {
+	display: inline-block;
+	border: 5px solid rgba(0, 0, 0, 0.2);
+	padding: 10px 20px;
+	text-align: center;
+}
+
+.letter.ligature {
+	background: #f0f0f0;
+}
+
+.letter.selected {
+	background: rgba(255, 255, 0, 0.3)
+}
+
+.upper {
+	font-size: 50px;
+	display: none;
+}
+
+.lower {
+	font-size: 50px;
+	display: none;
+	color: rgba(0, 0, 0, 0.5)
+}
+
+.cyrillic {
+	font-size: 20px;
+	margin-top: 8px;
+	font-style: italic;
+	color: rgb(195, 0, 255);
+	display: none;
+}
+
+.latin {
+	font-size: 20px;
+	margin-top: 8px;
+	font-style: italic;
+	color: rgb(52, 148, 0);
+	display: none;
+}
+
+.show-upper .upper { display: inline-block; }
+.show-lower .lower { display: inline-block; }
+.show-cyrillic .cyrillic { display: block; }
+.show-latin .latin { display: block; }
+
+.testing form,
+.testing .alphabet,
+.testing footer,
+.testing #none-btn {
+	display: none !important;
+}
+
+.test {
+	margin: 50px auto;
+	width: 60%;
+	border: 5px solid rgba(0, 0, 0, 0.2);
+	text-align: center;
+	padding: 50px;
+	display: none;
+	position: relative;
+}
+
+.testing .test {
+	display: block;
+}
+
+.test .lower,
+.test .upper {
+	font-size: 80px;
+}
+
+.test .counter {
+	text-align: right;
+}
+
+.test button.close {
+	background: none;
+	border: none;
+	left: 50px;
+	top: 46px;
+	position: absolute;
+	color: black;
+	padding: 0;
+	cursor: pointer;
+}
+
+.test button.close:hover {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.choices {
+	margin-top: 30px;
+}
+
+.choice {
+	cursor: pointer;
+	padding: 5px;
+	width: 60%;
+	margin: 0 auto;
+	font-size: 25px;
+	border-radius: 3px;
+}
+
+@media (hover) { /* ignore on iphone */
+	.choice:hover {
+		background: rgba(0, 0, 0, 0.1);
+	}
+}
+
+.choice.correct {
+	background: rgba(0, 255, 0, 0.5);
+}
+
+.choice.incorrect {
+	background: rgba(255, 0, 0, 0.5);
+}
+
+.test .title {
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+
+.test .count {
+	font-size: 30px;
+	margin-bottom: 30px;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.test .points {
+	color: black;
+}
+
+footer {
+	font-size: 13px;
+	margin: 20px;
+	margin-top: 40px;
+	color: #919191;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+footer div {
+	display: block;
+}
