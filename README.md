@@ -4,7 +4,7 @@ Trainer for Armenian alphabet.
 
 Useful for those who want to get some kind of understanding of street signs, billboards, etc., while being in Armenia.
 
-<img src="cascade.jpg" width=400>
+<img src="screenshot.png" width=700>
 
 ## Sources
 
