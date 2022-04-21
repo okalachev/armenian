@@ -195,6 +195,7 @@ function nextQuestion() {
 	testEl.innerHTML = `
 		<button class="close" onclick="closeTest()">╳</button>
 		<div class="counter">${question + 1} of ${questions.length}</div>
+		<div class="title">Choose correct transliteration:</div>
 		<div class="upper">${letter}</div>
 		<div class="lower">${lower}</div>
 		<div class="choices">${choicesHTML}</div>`;
