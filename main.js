@@ -222,7 +222,7 @@ function input(e) {
 		} else {
 			nextQuestion();
 		}
-	}, answer == correct ? 600 : 2000);
+	}, answer == correct ? 200 : 2000);
 }
 
 fetch('armenian.csv')
