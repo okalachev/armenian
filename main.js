@@ -179,14 +179,15 @@ function nextQuestion() {
 	let letter = getData(questions[question], 'letter');
 	let lower = getData(questions[question], 'lower');
 
-	let choices = [];
-	while (choices.length < CHOICES) {
+	let choices = new Set();
+	// insert correct answer
+	choices.add(getData(questions[question], translitCell));
+	// insert incorrect answers
+	while (choices.size < CHOICES) {
 		let choice = randint(0, data.length - 1);
-		if (getData(questions[question], 'letter') == getCell(data[choice], 'letter')) continue;
-		if (choices.includes(choice)) continue;
-		choices.push(getCell(data[choice], translitCell));
+		choices.add(getCell(data[choice], translitCell));
 	}
-	insertRandom(choices, getData(questions[question], translitCell));
+	choices = shuffle(choices);
 
 	let choicesHTML = '';
 	for (let choice of choices) {
