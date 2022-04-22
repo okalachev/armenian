@@ -13,11 +13,6 @@ function randint(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function insertRandom(arr, el) {
-	let n = randint(0, arr.length);
-	arr.splice(n, 0, el);
-}
-
 function shuffle(arr) {
 	arr = [...arr];
 	for (var i = arr.length - 1; i > 0; i--) {
