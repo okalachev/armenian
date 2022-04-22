@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="main.css">
@@ -27,7 +28,7 @@
 				<label><input oninput="update()" name=translit value=latin type=radio checked>Latin</label>
 				<label><input oninput="update()" name=translit value=cyrillic type=radio>Cyrillic</label>
 			</div>
-			<div type="button" id="none-btn" onclick="selectNone()">Select none</div>
+			<div id="none-btn" onclick="selectNone()">Select none</div>
 			<button type="button" onclick="runTest()" id="train-btn">Train!</button>
 		</form>
 
@@ -42,6 +43,6 @@
 				Author: <a href="https://chev.me">Oleg Kalachev</a>
 			</div>
 		</footer>
-		<script type="text/javascript" src="main.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>
