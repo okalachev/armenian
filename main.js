@@ -175,6 +175,10 @@ function closeTest() {
 	document.body.classList.remove('testing');
 }
 
+document.addEventListener('keydown', function(e) {
+	if(e.key == 'Escape') closeTest()
+});
+
 function nextQuestion() {
 	let letter = getData(questions[question], 'letter');
 	let lower = getData(questions[question], 'lower');
