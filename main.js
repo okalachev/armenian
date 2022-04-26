@@ -70,7 +70,12 @@ function updateAlphabet(save = true) {
 
 let translitCell;
 
-function update(save = true) {
+function update(save = true, e) {
+	if (!document.querySelector('input[data-type=case]:checked')) {
+		// enforce something checked
+		document.querySelector(`input[name=${e.currentTarget.name == 'upper' ? 'lower' : 'upper'}]`).checked = true;
+	}
+
 	document.body.classList.toggle('show-upper', document.querySelector('input[name=upper]:checked'));
 	document.body.classList.toggle('show-lower', document.querySelector('input[name=lower]:checked'));
 
