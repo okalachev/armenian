@@ -203,7 +203,7 @@ function nextQuestion() {
 	}
 	testEl.innerHTML = `
 		<button class="close" onclick="closeTest()">╳</button>
-		<div class="counter">${question + 1} of ${questions.length}</div>
+		<div class="counter">${question + 1} ${_('of')} ${questions.length}</div>
 		<div class="title">${_('choose')}</div>
 		<div class="upper">${letter}</div>
 		<div class="lower">${lower}</div>
