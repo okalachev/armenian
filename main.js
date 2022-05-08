@@ -1,3 +1,7 @@
+function _(key) {
+	return document.getElementById('i18n-' + key).innerHTML;
+}
+
 function parseCSV(csv) {
 	let data = csv.trim().split('\n').map(function(row) {
 		return row.split(';');
@@ -92,7 +96,7 @@ update(false);
 
 function updateTrainTitle() {
 	document.getElementById('train-btn').innerText = selected.size ?
-		'Train selected' : 'Train!';
+		_('train-selected') : _('train');
 	document.getElementById('none-btn').style.display = selected.size ? 'block' : 'none';
 }
 
@@ -166,8 +170,8 @@ function runTest() {
 
 function finishTest() {
 	testEl.innerHTML = `
-		<div class="title">Correct answers:</div>
-		<div class="count"><span class="points">${points}</span> of ${questions.length}</div>
+		<div class="title">${_('correct-answers')}</div>
+		<div class="count"><span class="points">${points}</span> ${_('of')} ${questions.length}</div>
 		<button onclick="closeTest()">OK</button>`;
 }
 
@@ -200,7 +204,7 @@ function nextQuestion() {
 	testEl.innerHTML = `
 		<button class="close" onclick="closeTest()">╳</button>
 		<div class="counter">${question + 1} of ${questions.length}</div>
-		<div class="title">Choose correct transliteration:</div>
+		<div class="title">${_('choose')}</div>
 		<div class="upper">${letter}</div>
 		<div class="lower">${lower}</div>
 		<div class="choices">${choicesHTML}</div>`;

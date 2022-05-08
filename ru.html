@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<link rel="stylesheet" href="main.css">
+		<title>Тренажер армянского алфавита</title>
+		<link rel="icon" type="image/png" href="favicon.png">
+		<meta name="description" content="Учить армянский алфавит бесплатно">
+		<meta name="keywords" content="армянский, алфавит, буквы, учить, тренер, тренажер, частотность, бесплатно">
+		<meta property="og:url" content="https://chev.me/armenian/ru"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:image" content="https://chev.me/armenian/armenian.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=0.6">
+		<!-- Yandex.Metrika counter --> 
+		<script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(37286925, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/37286925" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</head>
+
+	<body>
+		<h1>Тренажер армянского алфавита</h1>
+
+		<form>
+			<div class="group">
+				<label><input name="upper" data-type="case" oninput="update(true, event)" type="checkbox" checked>Прописные</label>
+				<label><input name="lower" data-type="case" oninput="update(true, event)" type="checkbox" checked>Строчные</label>
+			</div>
+			<div class="group">
+				<label><input oninput="updateAlphabet()" name=sort value=freq type=radio checked>По частоте</label>
+				<label><input oninput="updateAlphabet()" name=sort value=alpha type=radio>По алфавиту</label>
+			</div>
+			<div class="group">
+				<label><input oninput="update()" name=translit value=cyrillic type=radio checked>Кириллица</label>
+				<label><input oninput="update()" name=translit value=latin type=radio>Латиница</label>
+			</div>
+			<div id="none-btn" onclick="selectNone()">Сбросить выбранное</div>
+			<button type="button" onclick="runTest()" id="train-btn">Учить!</button>
+		</form>
+
+		<div class="alphabet"></div>
+		<div class="test" onclick="skip()"></div>
+
+		<footer>
+			<div>
+				<a href="https://github.com/okalachev/armenian">Исходный код на GitHub</a>
+			</div>
+			<div>
+				Автор: <a href="https://chev.me">Олег Калачев</a>
+			</div>
+		</footer>
+
+		<template id="i18n-train">Учить</template>
+		<template id="i18n-train-selected">Учить выбранное!</template>
+		<template id="i18n-correct-answers">Правильные ответы:</template>
+		<template id="i18n-of">из</template>
+		<template id="i18n-choose">Выберите правильную транслитерацию:</template>
+
+		<script src="main.js"></script>
+	</body>
+</html>
