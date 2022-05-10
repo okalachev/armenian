@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<link rel="stylesheet" href="main.css">
-		<title>Armenian alphabet trainer</title>
+		<title>Тренажер армянского алфавита</title>
 		<link rel="icon" type="image/png" href="favicon.png">
-		<meta name="description" content="Learn Armenian alphabet by frequency, Учить армянский алфавит по частотности">
-		<meta name="keywords" content="armenian, letters, alphabet, learn, test, frequency, trainer, армянский, алфавит, буквы, учить, тренер, частотность">
-		<meta property="og:url" content="https://chev.me/armenian/"/>
+		<meta name="description" content="Учить армянский алфавит бесплатно">
+		<meta name="keywords" content="армянский, алфавит, буквы, учить, тренер, тренажер, частотность, бесплатно">
+		<meta property="og:url" content="https://chev.me/armenian/ru"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:image" content="https://chev.me/armenian/armenian.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=0.6">
@@ -16,23 +16,23 @@
 	</head>
 
 	<body>
-		<h1>Armenian Alphabet Trainer</h1>
+		<h1>Тренажер армянского алфавита</h1>
 
 		<form>
 			<div class="group">
-				<label><input name="upper" data-type="case" oninput="update(true, event)" type="checkbox" checked>Upper</label>
-				<label><input name="lower" data-type="case" oninput="update(true, event)" type="checkbox" checked>Lower</label>
+				<label><input name="upper" data-type="case" oninput="update(true, event)" type="checkbox" checked>Прописные</label>
+				<label><input name="lower" data-type="case" oninput="update(true, event)" type="checkbox" checked>Строчные</label>
 			</div>
 			<div class="group">
-				<label><input oninput="updateAlphabet()" name=sort value=freq type=radio checked>By frequency</label>
-				<label><input oninput="updateAlphabet()" name=sort value=alpha type=radio>Alphabetically</label>
+				<label><input oninput="updateAlphabet()" name=sort value=freq type=radio checked>По частоте</label>
+				<label><input oninput="updateAlphabet()" name=sort value=alpha type=radio>По алфавиту</label>
 			</div>
 			<div class="group">
-				<label><input oninput="update()" name=translit value=latin type=radio checked>Latin</label>
-				<label><input oninput="update()" name=translit value=cyrillic type=radio>Cyrillic</label>
+				<label><input oninput="update()" name=translit value=cyrillic type=radio checked>Кириллица</label>
+				<label><input oninput="update()" name=translit value=latin type=radio>Латиница</label>
 			</div>
-			<div id="none-btn" onclick="selectNone()">Select none</div>
-			<button type="button" onclick="runTest()" id="train-btn">Train!</button>
+			<div id="none-btn" onclick="selectNone()">Сбросить выбранное</div>
+			<button type="button" onclick="runTest()" id="train-btn">Учить!</button>
 		</form>
 
 		<div class="alphabet"></div>
@@ -40,21 +40,21 @@
 
 		<footer>
 			<div>
-				<a href="https://github.com/okalachev/armenian">Source code on GitHub</a>
+				<a href="https://github.com/okalachev/armenian">Исходный код на GitHub</a>
 			</div>
 			<div>
-				<a href="ru">Русская версия</a>
+				<a href="en">English version</a>
 			</div>
 			<div>
-				Author: <a href="https://chev.me">Oleg Kalachev</a>
+				Автор: <a href="https://chev.me">Олег Калачев</a>
 			</div>
 		</footer>
 
-		<template id="i18n-train">Train!</template>
-		<template id="i18n-train-selected">Train selected!</template>
-		<template id="i18n-correct-answers">Correct answers:</template>
-		<template id="i18n-of">of</template>
-		<template id="i18n-choose">Choose correct transliteration:</template>
+		<template id="i18n-train">Учить</template>
+		<template id="i18n-train-selected">Учить выбранное!</template>
+		<template id="i18n-correct-answers">Правильные ответы:</template>
+		<template id="i18n-of">из</template>
+		<template id="i18n-choose">Выберите правильную транслитерацию:</template>
 
 		<script src="main.js"></script>
 	</body>
